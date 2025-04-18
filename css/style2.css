@@ -1,0 +1,559 @@
+/* ESTILO GENERAL - Base styles for all screens */
+/* ESTILO GENERAL - Base styles for all screens */
+#card {
+  width: 90vw;
+  max-width: 600px;
+  max-height: 90vh;
+  position: fixed;
+
+  transform: translateX(-50%);
+  display: flex;
+  visibility: hidden;
+  overflow-y: auto;    /* Permite scroll cuando el contenido es largo */
+  margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
+  
+  /* Oculta la barra de scroll pero mantiene la funcionalidad */
+  scrollbar-width: none; /* Para Firefox */
+  -ms-overflow-style: none; /* Para IE y Edge */
+}
+
+/* Oculta la barra de scroll en WebKit (Chrome, Safari) */
+#card::-webkit-scrollbar {
+  display: none;
+}
+
+/* Resto de tus estilos... */
+
+/* Título */
+#card h2 {
+  font-size: 2.3em;
+  margin: 0 0 10px 0;
+  color: red;
+  text-align: center;
+}
+
+/* Texto */
+#card p {
+  font-size: 1em;      /* Better to use relative units */
+  text-align: justify;
+  padding: 0 10px;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+/* Medium screens (tablets, 600px and up) */
+@media (min-width: 600px) {
+  #card {
+    top: 20%;
+    width: 80vw;
+  }
+  
+  #card h2 {
+    font-size: 1.5em;
+  }
+  
+  #card p {
+    font-size: 1.1em;
+  }
+}
+
+/* Large screens (desktops, 900px and up) */
+@media (min-width: 900px) {
+  #card {
+    top: 20%;
+    left: 10%;
+    max-width: 800px;
+
+  }
+  
+  #card h2 {
+    font-size: 2em;
+  }
+  
+  #card p {
+    font-size: 1.4em;
+    padding: 0 20px;
+  }
+}
+
+/* Very small screens (mobile portrait, 400px and below) */
+@media (max-width: 400px) {
+  #card {
+    top: 30%;
+    max-height: 90vh;
+  }
+  
+  #card h2 {
+    font-size: 1.1em;
+  }
+  
+  #card p {
+    font-size: 0.9em;
+    text-align: left; /* Justify can look bad on narrow screens */
+  }
+}
+
+
+.V5, .V7, .V8, .V4 {
+  position: fixed;
+  width: 15%;
+  height: 35%;
+  border-radius: 10%;
+  border: solid 3px red;
+}
+
+/* Posiciones originales (no se tocan) */
+.V5 {
+  top: 10%;
+  left: 5%;
+}
+.V7 {
+  top: 50%;
+  left: 5%;
+}
+.V8 {
+  top: 10%;
+  right: 5%;
+}
+.V4 {
+  top: 50%;
+  right: 5%;
+}
+
+/* === RESPONSIVO === */
+
+/* Teléfonos */
+@media (max-width: 576px) {
+  .V5, .V7, .V8, .V4 {
+    width: 25%;
+    height: 15%;
+    border-radius: 8%;
+    border-width: 2px;
+  }
+}
+
+/* Tabletas */
+@media (min-width: 577px) and (max-width: 991px) {
+  .V5, .V7, .V8, .V4 {
+    width: 25%;
+    height: 30%;
+    border-radius: 9%;
+    border-width: 2.5px;
+  }
+}
+
+/* Escritorio grande (valores normales) */
+@media (min-width: 992px) {
+  .V5, .V7, .V8, .V4 {
+    width: 15%;
+    height: 35%;
+    border-radius: 10%;
+    border-width: 3px;
+  }
+}
+
+.side {
+   background:#eee;
+   height:600px;
+   width:480px;
+/*    border:1px solid red; */
+   padding:10px;
+}
+.side.one {
+   width:320px;
+   transform:skew(10deg,20deg);
+   background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
+}
+.side.two {
+   transform:skew(10deg,-15deg);
+   background:linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
+
+body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   font-family: 'Sacramento', cursive;
+   background-color: #f1e3d3;
+   overflow: hidden;
+ }
+ 
+ .valentines-day {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px;
+  transform-origin: top left; /* Escala desde su esquina superior izquierda */
+  left: 9.5%;
+}
+ 
+ .envelope {
+   position: relative;
+   filter: drop-shadow(0 0 25px rgba(0,0,0,.3));
+ }
+ 
+ .envelope:before {
+   content:"";
+   position: absolute;
+   width:254px;
+   height:254px;
+   background-color: #ff9494;
+   transform: rotate(-45deg);
+   border-radius: 0 15px 0 0;
+   left:-37px;
+   top:-82px;
+ }
+ 
+ .envelope:after {
+   content:"";
+   position: absolute;
+   background-color: #ff9494;
+   width:360px;
+   height:225px;
+   left:-90px;
+   top:45px;
+ }
+ 
+ .heart {
+   position: relative;
+   background-color: #e01911;
+   display: inline-block;
+   height: 180px;
+   top:50px;
+   left:0;
+   transform: rotate(-45deg);
+   width:180px;
+   filter: drop-shadow(0 -10px 25px rgba(0,0,0,.3));
+   transition: .5s;
+ }
+   
+ .heart:before, .heart:after {
+   content:"";
+   background-color: #e01911;
+   border-radius:50%;
+   height: 180px;
+   width: 180px;
+   position: absolute;
+   }
+   
+ .heart:before {
+   top:-100px;
+   left:0;}
+   
+ .heart:after {
+   left:100px;
+   top:0;}
+ 
+ .front {
+   position: absolute;
+   width:0;
+   height:0;
+   border-right: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top:44px;
+   left:80px;
+   z-index:4;
+ }
+ 
+ .front:before {
+   content:"";
+   position: absolute;
+   width:0;
+   height:0;
+   border-left: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top:-113px;
+   left:-170px;
+ }
+ 
+ .front:after {
+   width:0;
+   height:0;
+   position: absolute;
+   content:"";
+   border-bottom: 150px solid #fce7e9;
+   border-right:180px solid transparent;
+   border-left: 180px solid transparent;
+   top:-36px;
+   left:-170px;
+ }
+ 
+ .text {
+   position: absolute;
+   font-family: arial;
+   letter-spacing:2px;
+   text-align: center;
+   color: white;
+   z-index:2;
+   top:70px;
+   left:15px;
+   margin: 0 10px;
+   transition: .5s;
+   font-size: 28px;
+   
+ }
+ 
+ .valentines-day:hover .heart {
+   transform: translateY(-50px) rotate(-45deg);
+ }
+ 
+ .valentines-day:hover .text {
+   transform: translateY(-50px);
+ }
+
+ @media (max-width: 480px) {
+  .valentines-day {
+    transform: scale(0.6);
+  }
+}
+
+/* Tabletas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .valentines-day {
+    transform: scale(0.8);
+  }
+}
+
+/* Escritorio: tamaño normal */
+@media (min-width: 769px) {
+  .valentines-day {
+    transform: scale(1);
+  }
+}
+
+ .container{
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons{
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  top: -2%;
+  left: 3%;   
+}
+
+.btn{
+  font-family: arial;
+  text-decoration: none;
+  padding: 1px 8px;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 32px;
+}
+
+.btn-3{
+  color: white;
+  border-radius: 40px;    
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  overflow: hidden;
+}
+
+.btn-3::after{
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background: #13ff13;
+  background-image: linear-gradient(-225deg, #650707 0%, #f04f4f 29%, #e23535 67%, #cb3737 100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-3:hover{
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 rgba(218, 86, 102, 0.5), -10px 10px 25px 0 rgba(222, 107, 107, 0.794);
+}
+
+.btn-3:hover::after{
+  transform: rotate(150deg);
+}
+
+.container2 {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -2%;
+  right: 3%;
+}
+
+.btn1 {
+  font-family: arial;
+  text-decoration: none;
+  padding: 1px 8px;
+  font-size: 1.5rem;
+  position: relative;
+  margin: 32px;
+}
+
+.btn-4 {
+  color: white;
+  border-radius: 40px;
+  box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-4::after {
+  content: "";
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  background: #13ff13;
+  background-image: linear-gradient(-225deg, #650707 0%, #f04f4f 29%, #e23535 67%, #cb3737 100%);
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.btn-4:hover {
+  transform: translate(0, -6px);
+  box-shadow: 10px -10px 25px 0 rgba(218, 86, 102, 0.5), -10px 10px 25px 0 rgba(222, 107, 107, 0.794);
+}
+
+.btn-4:hover::after {
+  transform: rotate(150deg);
+}
+
+/* ======================
+   RESPONSIVO
+====================== */
+
+/* Teléfonos */
+@media (max-width: 576px) {
+  .buttons2 {
+    right: 5%;
+    top: 0;
+  }
+
+  .btn1 {
+    font-size: 1rem;
+    padding: 4px 10px;
+    margin: 36px;
+  }
+
+  .btn-4::after {
+    width: 250px;
+    height: 250px;
+    top: -30px;
+    left: -70px;
+  }
+}
+
+/* Tabletas */
+@media (min-width: 577px) and (max-width: 991px) {
+  .btn1 {
+    font-size: 4.2rem;
+    padding: 6px 12px;
+    margin: 64px;
+  }
+
+  .btn-4::after {
+    width: 500px;
+    height: 500px;
+    top: -40px;
+    left: -80px;
+  }
+}
+
+/* Escritorio grande (mantiene valores por defecto) */
+@media (min-width: 992px) {
+  .btn1 {
+    font-size: 1.5rem;
+    padding: 1px 8px;
+    margin: 32px;
+  }
+
+  .btn-4::after {
+    width: 400px;
+    height: 400px;
+    top: -50px;
+    left: -100px;
+  }
+}
+
+
+
+
+ /* ======================
+   RESPONSIVO
+====================== */
+
+/* Teléfonos */
+@media (max-width: 576px) {
+  .buttons {
+    right: 5%;
+    top: 0;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 4px 10px;
+    margin: 36px;
+  }
+
+  .btn-3::after {
+    width: 250px;
+    height: 250px;
+    top: -30px;
+    left: -70px;
+  }
+}
+
+/* Tabletas */
+@media (min-width: 577px) and (max-width: 991px) {
+  .btn {
+    font-size: 4.2rem;
+    padding: 6px 12px;
+    margin: 64px;
+  }
+
+  .btn-3::after {
+    width: 500px;
+    height: 500px;
+    top: -40px;
+    left: -80px;
+  }
+}
+
+/* Escritorio grande (mantiene valores por defecto) */
+@media (min-width: 992px) {
+  .btn {
+    font-size: 1.5rem;
+    padding: 1px 8px;
+    margin: 32px;
+
+  }
+
+  .btn-3::after {
+    width: 400px;
+    height: 400px;
+    top: -50px;
+    left: -100px;
+  }
+}
+
+
+
+
+ 

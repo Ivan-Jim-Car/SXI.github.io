@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1e3d3;
+}
+
+.container {
+    text-align: center;
+}
+
+#gifContainerImg {
+    width: 60%;
+    height: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+#siBtn {
+    padding: 10px 20px; 
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #009705; /* Verde */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+#noBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #FF5733; /* Rojo */
+    color: white;
+    border: 2px solid #FFC0CB; /* Bordes rosa */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+#noBtn span {
+    font-size: 18px;
+    color: #fcf4f4; /* Cambia el color del texto según tus preferencias */
+    /* Otras propiedades de estilo aquí */
+}
+
+#siBtn:hover{
+    background-color: #053a03; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+#noBtn:hover {
+    background-color: #641e0d; /* Cambia a otro color en hover, puedes ajustar el valor según tus preferencias */
+}
+.bg-green {
+    background-color: #f1e3d3; /* Nuevo color de fondo verde */
+}
+
+#messageContainer {
+    font-size: 30px;
+    color: #FF0000; /* Color rojo */
+    font-family: 'YourDesiredFont', sans-serif; /* Reemplaza 'YourDesiredFont' con la fuente que desees */
+    text-shadow: 2px 2px 4px #000; /* Borde simulado */
+    animation: pulse 0.5s infinite alternate; /* Animación de palpitación más rápida */
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.3); /* Zoom más grande */
+    }
+}
+
+.container2{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .buttons{
+    position: absolute;
+    display: flex;
+    flex-direction: column; 
+    top: -2%;
+    left: 3%;   
+  }
+  
+  .btn{
+    font-family: arial;
+    text-decoration: none;
+    padding: 5px 15px;
+    font-size: 1.5rem;
+    position: relative;
+    margin: 32px;
+  }
+  
+  .btn-3{
+    color: white;
+    border-radius: 40px;    
+    box-shadow: 0 0 0 0 rgba(143, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    overflow: hidden;
+  }
+  
+  .btn-3::after{
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background: #13ff13;
+    background-image: linear-gradient(-225deg, #650707 0%, #f04f4f 29%, #e23535 67%, #cb3737 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
+  }
+  
+  .btn-3:hover{
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(218, 86, 102, 0.5), -10px 10px 25px 0 rgba(222, 107, 107, 0.794);
+  }
+  
+  .btn-3:hover::after{
+    transform: rotate(150deg);
+  }
+  
